@@ -13,6 +13,12 @@ public class Brand {
         this.description = description;
     }
 
+    public Brand(String name, String website, String description) {
+        this.name = name;
+        this.website = website;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }
