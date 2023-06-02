@@ -5,19 +5,24 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionUtils {
-    private final  String url  =  "jdbc:postgresql://localhost:5432/cw8" ;
-    private final  String username = "postgres" ;
-    private final  String password = "12161213" ;
+    private static Connection connection = null;
+    private static final String url = "jdbc:postgresql://localhost:5432/cw8";
+    private static final String username = "postgres";
+    private static final String password = "123456";
 
-public Connection getConnection ()
-{
-    Connection connection = null ;
-    try {
-         connection = DriverManager.getConnection( url , username , password) ;
-    } catch (SQLException e) {
-        throw new RuntimeException(e);
+    private ConnectionUtils() {
+
     }
-    return  connection ;
-}
+
+    public static Connection getConnection() {
+        if (connection == null) {
+            try {
+                connection = DriverManager.getConnection(url, username, password);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return connection;
+    }
 
 }

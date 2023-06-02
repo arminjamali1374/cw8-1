@@ -1,14 +1,21 @@
-package repository.impl;
+package org.example.repository.impl;
 
 import org.example.entity.Brand;
 import org.example.util.ApplicationContext;
-import repository.BrandRepository;
+import org.example.repository.BrandRepository;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BrandRepositoryImpl implements BrandRepository {
+    private final Connection connection;
+
+    public BrandRepositoryImpl(Connection connection) {
+        this.connection = connection;
+    }
+
     @Override
     public void save(Brand brand) throws SQLException {
         String query = """

@@ -1,8 +1,8 @@
-package repository.impl;
+package org.example.repository.impl;
 
 import org.example.entity.User;
 import org.example.util.ApplicationContext;
-import repository.UserRepository;
+import org.example.repository.UserRepository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,12 +51,12 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public boolean existsByUsername(User user) throws SQLException {
+    public boolean existsByUsername(String username) throws SQLException {
         String query = """
                 SELECT count(*) FROM "user" WHERE username = ?
                 """;
         PreparedStatement preparedStatement = ApplicationContext.getConnection().prepareStatement(query);
-        preparedStatement.setString(1,user.getUsername());
+        preparedStatement.setString(1,username);
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
 
@@ -64,12 +64,12 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public boolean existsByEmail(User user) throws SQLException {
+    public boolean existsByEmail(String email) throws SQLException {
         String query = """
                 SELECT count(*) FROM "user" WHERE email = ?
                 """;
         PreparedStatement preparedStatement = ApplicationContext.getConnection().prepareStatement(query);
-        preparedStatement.setString(1,user.getEmail());
+        preparedStatement.setString(1,email);
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
 

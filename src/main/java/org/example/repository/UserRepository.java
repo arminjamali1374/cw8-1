@@ -1,4 +1,4 @@
-package repository;
+package org.example.repository;
 
 import org.example.entity.User;
 
@@ -8,6 +8,6 @@ public interface UserRepository {
     void save (User user) throws SQLException;
     User load (int userId) throws SQLException;
     void delete (int userId) throws SQLException;
-    boolean existsByUsername(User user) throws SQLException;
-    boolean existsByEmail(User user) throws SQLException;
+    boolean existsByUsername(String username) throws SQLException;
+    boolean existsByEmail(String email) throws SQLException;
 }

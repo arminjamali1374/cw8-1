@@ -1,9 +1,8 @@
-package repository.impl;
+package org.example.repository.impl;
 
-import org.example.entity.Brand;
 import org.example.entity.Category;
 import org.example.util.ApplicationContext;
-import repository.CategoryRepository;
+import org.example.repository.CategoryRepository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

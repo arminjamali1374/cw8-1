@@ -1,6 +1,5 @@
-package repository;
+package org.example.repository;
 
-import org.example.entity.Brand;
 import org.example.entity.Product;
 
 import java.sql.SQLException;

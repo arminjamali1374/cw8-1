@@ -16,6 +16,13 @@ public class Product {
         this.brandId = brandId;
     }
 
+    public Product(String name, String createData, int categoryId, int brandId) {
+        this.name = name;
+        this.createData = createData;
+        this.categoryId = categoryId;
+        this.brandId = brandId;
+    }
+
     public int getId() {
         return id;
     }

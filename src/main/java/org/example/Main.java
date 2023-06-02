@@ -1,18 +1,20 @@
 package org.example;
 
+import org.example.entity.Brand;
 import org.example.entity.Category;
-import org.example.entity.User;
-import repository.CategoryRepository;
-import repository.UserRepository;
-import repository.impl.CategoryRepositoryImpl;
-import repository.impl.UserRepositoryImpl;
+import org.example.entity.Product;
+import org.example.repository.BrandRepository;
+import org.example.repository.CategoryRepository;
+import org.example.repository.ProductRepository;
+import org.example.repository.impl.BrandRepositoryImpl;
+import org.example.repository.impl.CategoryRepositoryImpl;
+import org.example.repository.impl.ProductRepositoryImpl;
 
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        CategoryRepository categoryRepository = new CategoryRepositoryImpl();
-        Category category = new Category("nice","very nice");
-        System.out.println(categoryRepository.existsByName("nice"));
+
+
     }
 }
