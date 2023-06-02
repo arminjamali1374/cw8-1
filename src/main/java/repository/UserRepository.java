@@ -2,9 +2,12 @@ package repository;
 
 import org.example.entity.User;
 
+import java.sql.SQLException;
+
 public interface UserRepository {
-    void save (User user);
-    User load (int userId);
-    void delete (int userId);
-    boolean validUsername(User user);
+    void save (User user) throws SQLException;
+    User load (int userId) throws SQLException;
+    void delete (int userId) throws SQLException;
+    boolean validUsername(User user) throws SQLException;
+    boolean validEmail(User user) throws SQLException;
 }
