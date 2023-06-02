@@ -21,7 +21,7 @@ public class UserRepositoryImpl implements UserRepository {
         preparedStatement.setString(3, user.getEmail());
         preparedStatement.setString(4,user.getPassword());
 
-        preparedStatement.executeUpdate();
+        preparedStatement.execute();
     }
 
     @Override
@@ -51,7 +51,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public boolean validUsername(User user) throws SQLException {
+    public boolean existsByUsername(User user) throws SQLException {
         String query = """
                 SELECT count(*) FROM "user" WHERE username = ?
                 """;
@@ -64,7 +64,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public boolean validEmail(User user) throws SQLException {
+    public boolean existsByEmail(User user) throws SQLException {
         String query = """
                 SELECT count(*) FROM "user" WHERE email = ?
                 """;
